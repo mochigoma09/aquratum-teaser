@@ -16,7 +16,7 @@ import MemberSection from '../components/MemberSection.vue';
     </div>
     
     <main relative z-10>
-        <MemberSection />
+        <MemberSection source="members" />
     </main>
   </div>
 </template>

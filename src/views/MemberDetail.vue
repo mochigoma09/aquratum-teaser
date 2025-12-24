@@ -60,6 +60,14 @@ onUnmounted(() => {
     stopSlideShow();
     window.removeEventListener('keydown', handleKeydown);
 });
+
+const backLink = computed(() => {
+  const from = route.query.from;
+  if (from === 'members') {
+    return { path: '/members', text: 'Back to Members' };
+  }
+  return { path: '/', text: 'Back to Top' };
+});
 </script>
 
 <template>
@@ -144,9 +152,14 @@ onUnmounted(() => {
             </p>
          </div>
 
-         <router-link to="/" class="mt-12 inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
-            <span class="group-hover:-translate-x-1 transition-transform">←</span> Back to Top
-         </router-link>
+         <div class="mt-12">
+            <router-link 
+              :to="backLink.path" 
+              class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group"
+            >
+              <span class="group-hover:-translate-x-1 transition-transform">←</span> {{ backLink.text }}
+            </router-link>
+         </div>
       </div>
     </div>
     

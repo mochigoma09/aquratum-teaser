@@ -7,6 +7,13 @@ const getCardClasses = (index) => {
   if (index % 2 === 0) return 'mt-0 md:mt-12';
   return 'mt-12 md:mt-0';
 };
+
+defineProps({
+  source: {
+    type: String,
+    default: 'home'
+  }
+});
 </script>
 
 <template>
@@ -24,6 +31,7 @@ const getCardClasses = (index) => {
         <MemberCard 
           :member="member" 
           :delay="index * 0.5"
+          :source="source"
         />
       </div>
     </div>

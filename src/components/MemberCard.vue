@@ -9,6 +9,10 @@ const props = defineProps({
   delay: {
     type: Number,
     default: 0
+  },
+  source: {
+    type: String,
+    default: 'home'
   }
 });
 
@@ -27,7 +31,7 @@ const getMemberImage = (id) => {
 
 <template>
   <router-link 
-    :to="`/members/${member.id}`"
+    :to="`/members/${member.id}?from=${source}`"
     class="member-card block relative group w-72 h-96 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden transition-all duration-500 hover:bg-white/10 hover:border-white/30 hover:scale-105 cursor-pointer"
     :style="{ animationDelay: `${delay}s`, ...colorStyles }"
   >
