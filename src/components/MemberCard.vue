@@ -19,6 +19,10 @@ const colorStyles = computed(() => {
     '--member-color': props.member.colorCode
   };
 });
+
+const getMemberImage = (id) => {
+  return new URL(`../assets/images/${id}/1.png`, import.meta.url).href;
+};
 </script>
 
 <template>
@@ -33,7 +37,7 @@ const colorStyles = computed(() => {
     <!-- Member Image -->
     <div class="absolute inset-0 z-0">
       <img 
-        :src="`/src/assets/images/${member.id}/1.png`" 
+        :src="getMemberImage(member.id)" 
         :alt="member.name"
         class="w-full h-full object-cover object-top opacity-80 group-hover:scale-110 transition-transform duration-700 ease-out"
       />
