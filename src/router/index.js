@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import MemberDetail from '../views/MemberDetail.vue';
 
@@ -34,7 +34,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHashHistory('/aquratum/'),
+    history: createWebHistory('/aquratum/'),
     routes,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
