@@ -7,9 +7,17 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 export default defineConfig({
   plugins: [
     vue(),
-    ViteImageOptimizer({
-      /* options */
-    }),
+    // ViteImageOptimizer({
+    //   png: {
+    //     quality: 100,
+    //   },
+    //   jpeg: {
+    //     quality: 100,
+    //   },
+    //   webp: {
+    //     lossless: true,
+    //   },
+    // }),
   ],
   base: '/aquratum/',
 })
